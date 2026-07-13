@@ -27,3 +27,8 @@ images, labels = next(data_iter)
 print("Dataset total size: ", len(train_dataset),"images")
 print("Batch images shape: ", images.shape, " [batch_size, channels, height, width]")
 print("Batch labels shape: ", labels.shape, " [batch_size]")
+
+for epoch in range(1): # Just 1 epoch for testing
+    for batch_idx, (X_batch, y_batch) in enumerate(train_loader):
+        if batch_idx % 200 == 0:
+            print(f"Batch {batch_idx} loaded | Features shape: {X_batch.shape} | Targets shape: {y_batch.shape}")
